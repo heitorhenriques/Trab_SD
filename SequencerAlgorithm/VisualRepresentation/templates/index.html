@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sequenciador Movel</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="circles-container">
+        <form class="clients-container" onsubmit="sendMessages(event)">
+            <div class="client-row">
+                <input class="checkbox" type="checkbox" id="client1Checkbox" name="clients" value="client1">
+                <div class="circle client" id="client1">C1</div>
+                <div class="message-form">
+                    <input type="text" id="client1Message" placeholder="Message for Client 1">
+                </div>
+            </div>
+            <div class="client-row">
+                <input class="checkbox" type="checkbox" id="client2Checkbox" name="clients" value="client2">
+                <div class="circle client" id="client2">C2</div>
+                <div class="message-form">
+                    <input type="text" id="client2Message" placeholder="Message for Client 2">
+                </div>
+            </div>
+            <div class="client-row">
+                <input class="checkbox" type="checkbox" id="client3Checkbox" name="clients" value="client3">
+                <div class="circle client" id="client3">C3</div>
+                <div class="message-form">
+                    <input type="text" id="client3Message" placeholder="Message for Client 3">
+                </div>
+            </div>
+            <button type="submit" id="sendButton">Send Message</button>
+        </form>
+
+        <div class="circle-container">
+            <div class="circle" id="circle1" style="top: 10%; left: 50%; transform: translate(-50%, -150%);">P1</div>
+            <div class="circle" id="circle2" style="top: 18%; left: 82%; transform: translate(-50%, -50%);">P2</div>
+            <div class="circle" id="circle3" style="top: 52%; left: 82%; transform: translate(-50%, -50%);">P3</div>
+            <div class="circle" id="circle4" style="top: 60%; left: 50%; transform: translate(-50%, 50%);">P4</div>
+            <div class="circle" id="circle5" style="top: 52%; left: 18%; transform: translate(-50%, -50%);">P5</div>
+            <div class="circle" id="circle6" style="top: 18%; left: 18%; transform: translate(-50%, -50%);">P6</div>
+        </div>
+
+        <div class="recipients-container">
+            <div class="recipient-row">
+                <div class="circle recipient" id="recipient1">R1</div>
+            </div>
+            <div class="recipient-row">
+                <div class="circle recipient" id="recipient2">R2</div>
+            </div>
+            <div class="recipient-row">
+                <div class="circle recipient" id="recipient3">R3</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tables-container">
+        <table id="sendingTable">
+            <h2>Sending Table</h2>
+            <thead>
+                <tr>
+                    <th>Iteration</th>
+                    <th>C1</th>
+                    <th>C2</th>
+                    <th>C3</th>
+                    <th>P1</th>
+                    <th>P2</th>
+                    <th>P3</th>
+                    <th>P4</th>
+                    <th>P5</th>
+                    <th>P6</th>
+                    <th>R1</th>
+                    <th>R2</th>
+                    <th>R3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be dynamically added -->
+            </tbody>
+        </table>
+        <table id="receivingTable">
+            <h2>Receiving Table</h2>
+            <thead>
+                <tr>
+                    <th>Iteration</th>
+                    <th>P1</th>
+                    <th>P2</th>
+                    <th>P3</th>
+                    <th>P4</th>
+                    <th>P5</th>
+                    <th>P6</th>
+                    <th>R1</th>
+                    <th>R2</th>
+                    <th>R3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be dynamically added -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="{{ url_for('static', filename='main.js') }}" type="text/javascript"></script>
+
+</body>
+
+</html>
