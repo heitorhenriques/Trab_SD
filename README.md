@@ -39,7 +39,7 @@ gradle run
 
 Depois disso ele vai pegar todas as dependencias necessarias e vai rodar o programa abrindo a interface grafica.
 
-Qualquer dificuldade em rodar o programa mais informações podem ser adquiridas no link a seguir [text](https://github.com/jacamo-lang/jacamo/blob/main/doc/install.adoc)
+Qualquer dificuldade em rodar o programa mais informações podem ser adquiridas no link a seguir [Instalação JaCaMo](https://github.com/jacamo-lang/jacamo/blob/main/doc/install.adoc)
 
 <h2 id="sequencerJS">SequencerAlgorithm</h2>
 
