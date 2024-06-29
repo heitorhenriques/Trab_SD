@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="#bully">BullyAlgorithm</a> • 
-  <a href="#sequencerJS">SequencerAlgorithm</a> •
+  <a href="#visualSequencer">SequencerAlgorithm</a> •
   <a href="#sequencerJava">SequencerAlgorithmJava</a>
 </p>
 
@@ -41,7 +41,40 @@ Depois disso ele vai pegar todas as dependencias necessarias e vai rodar o progr
 
 Qualquer dificuldade em rodar o programa mais informações podem ser adquiridas no link a seguir [Instalação JaCaMo](https://github.com/jacamo-lang/jacamo/blob/main/doc/install.adoc)
 
-<h2 id="sequencerJS">SequencerAlgorithm</h2>
+<h2 id="visualSequencer">SequencerAlgorithm</h2>
+
+### Sobre
+
+O VisualSequencer é um projeto criado em HTML e JavaScript para simular um sequenciador móvel. No exemplo, 3 clientes podem enviar mensagens a 6 processos sequenciadores que enviam a 3 receptores. 
+
+O usuário tem liberdade para personalizar mensagens que são enviadas pelos clientes C1, C2 e C3 e também pode escolher que algum desses não envie nada. Ao pressionar o botão de envio, os clientes selecionados enviarão suas respectivas mensages ao processo sequenciador líder.
+
+O processo sequenciador líder é representado por um processo <span style="color: #34db98;">**verde**</span>. Ao receber as mensagens dos clientes, o processo líder reorganiza a ordem das mensagens (para simular, a lista de mensagens é apenas invertida) e envia para os 3 receptores. Simulando latências, os tempos de envio, recebimento e processamento dos processos e receptores são aleatórios, com um mínimo de 3 segundos de espera para fins de visualização.
+
+Quando os receptores recebem as mensagens do sequenciador líder, os três iniciam uma simulação de processamento (com tempo aleatório) e, quando o primeiro receptor finaliza o processamento, ele avisa aos outros receptores que finalizou e que retornará uma mensagem de OK ao processo líder. Ao receber o OK, o processo líder sequencia e passa ao próximo processo no sequenciador. 
+
+Ao fim de todo o ciclo de mensagens, o programa passa a esperar um novo envio de mensagens do usuário, com um novo líder dos processos sequenciadores.
+
+### Como executar localmente
+
+#### Pré requisitos
+- Python
+- Flask
+
+#### Passo a passo
+Acesse o diretório do projeto VisualSequencerAlgorithm
+
+```bash
+cd VisualSequencerAlgorithm
+```
+
+Use o comando na raiz do projeto:
+
+```bash
+python app.py
+```
+
+Isso iniciará um servidor em [127.0.0.1:5000](http://127.0.0.1:5000), com a página web rodando.
 
 <h2 id="sequencerJava">SequencerAlgorithmJava</h2>
 
